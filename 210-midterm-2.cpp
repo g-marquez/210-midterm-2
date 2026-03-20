@@ -6,6 +6,7 @@
 
 #include <iostream>
 #include <vector> //to hold names
+#include <fstream> //to read names from file
 using namespace std;
 
 const int MIN_NR = 10, MAX_NR = 99, MIN_LS = 5, MAX_LS = 20;
@@ -213,8 +214,21 @@ public:
 };
 
 int main() {
-    cout << MIN_NR + MIN_LS + MAX_NR + MAX_LS;  // dummy statement to avoid compiler warning
+    vector<string> names;
+    string custName;
+    ifstream fin ("names.txt");
+    if (fin.good( )) {
+        while(fin >> custName) {
+            names.push_back(custName); //read names into vector
+        }
+        fin.close( );         
+    }
+    else
+    cout << "File not found. Check file name/directory and restart program\n";
 
-    
+    for (string n : names)
+        cout << n << " ";
+    cout << endl;
+
     return 0;
 }
