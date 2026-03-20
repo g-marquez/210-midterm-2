@@ -229,7 +229,7 @@ int main() {
     cout << "File not found. Check file name/directory and restart program\n";
 
     DoublyLinkedList list; //create doubly linked list object
-    cout << "Store opens:" << endl;
+    cout << "Store opens:" << endl; //first minute, 5 customers join
     //take a random name from names & add to list
     for (int i = 0; i < FIRST_CUSTOMERS; ++i) {
         string customer = names[rand() % NAME_MAX];
@@ -243,14 +243,36 @@ int main() {
     for (int i = 0; i < TIME_PERIODS; i++) {
         cout << "Time step #" << i + 2 << ":" << endl;
         //customer joins the line (60%)
-        int prob = rand() % 100 + 1; // returns random number 1-100
-        if (prob <= 60) {
+        int prob1 = rand() % 100 + 1;
+        if (prob1 <= 60) {
             string customer = names[rand() % NAME_MAX];
             list.push_back(customer);
             cout << "\t" << customer << " joins the line." << endl;
         }
-        //
-        if ()
+
+        //customer leaves the line before being served (10%)
+        int prob2 = rand() % 100 + 1;
+        if (prob2 <= 10) {
+
+        }
+
+        //VIP customer joins the front of the line (10%)
+        int prob3 = rand() % 100 + 1;
+        if (prob3 <= 10) {
+
+        }
+
+        //customer is served (40%)
+        if () {
+
+        }
+
+        //end customer gets frustrated and leaves the line (20%)
+        if () {
+
+        }
+        cout << "\tResulting line:" << endl;
+        list.print();
     }
 
     return 0;
