@@ -194,7 +194,7 @@ public:
             return;
         }
         while (current) {
-            cout << current->name << endl;
+            cout << "\t\t" << current->name << endl;
             current = current->next;
         }
         cout << endl;
@@ -235,6 +235,13 @@ int main() {
         string customer = names[rand() % NAME_MAX];
         list.push_back(customer);
         cout << "\t" << customer << " joins the line." << endl;
+    }
+    cout << "\tResulting line:" << endl;
+    list.print();
+
+    //loop for next 19 minutes (20 total)
+    for (int i = 0; i < TIME_PERIODS; i++) {
+        cout << "Time step #" << i + 2
     }
 
     return 0;
