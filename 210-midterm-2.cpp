@@ -10,7 +10,7 @@
 using namespace std;
 
 const int MIN_NR = 10, MAX_NR = 99, MIN_LS = 5, MAX_LS = 20;
-const int TIME_PERIODS = 20;
+const int TIME_PERIODS = 19; //first period of 20 adds 5 right away
 const int NAME_MAX = 98; //to randomly select a name
 
 class DoublyLinkedList {
@@ -214,6 +214,7 @@ public:
 };
 
 int main() {
+    srand(time(0)); //for random numbers & probabilities
     vector<string> names;
     string custName;
     ifstream fin ("names.txt");
@@ -226,9 +227,9 @@ int main() {
     else
     cout << "File not found. Check file name/directory and restart program\n";
 
-    for (string n : names)
-        cout << n << " ";
-    cout << endl;
+    DoublyLinkedList list; //create doubly linked list object
+    cout << "Store opens:" << endl;
+
 
     return 0;
 }
