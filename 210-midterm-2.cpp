@@ -241,7 +241,16 @@ int main() {
 
     //loop for next 19 minutes (20 total)
     for (int i = 0; i < TIME_PERIODS; i++) {
-        cout << "Time step #" << i + 2
+        cout << "Time step #" << i + 2 << ":" << endl;
+        //customer joins the line (60%)
+        int prob = rand() % 100 + 1; // returns random number 1-100
+        if (prob <= 60) {
+            string customer = names[rand() % NAME_MAX];
+            list.push_back(customer);
+            cout << "\t" << customer << " joins the line." << endl;
+        }
+        //
+        if ()
     }
 
     return 0;
