@@ -1,3 +1,9 @@
+//*****************************************************************************
+// COMSC-210 | Midterm 2 | Gabriel Marquez
+// Description: this program simulates a line at a coffee shop. The simulation
+// runs for 20 time periods (minutes) and displays the current line.
+//*****************************************************************************
+
 #include <iostream>
 using namespace std;
 
