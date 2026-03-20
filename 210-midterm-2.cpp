@@ -12,6 +12,7 @@ using namespace std;
 const int MIN_NR = 10, MAX_NR = 99, MIN_LS = 5, MAX_LS = 20;
 const int TIME_PERIODS = 19; //first period of 20 adds 5 right away
 const int NAME_MAX = 98; //to randomly select a name
+const int FIRST_CUSTOMERS = 5; //for first customers
 
 class DoublyLinkedList {
 private:
@@ -193,7 +194,7 @@ public:
             return;
         }
         while (current) {
-            cout << current->name << " ";
+            cout << current->name << endl;
             current = current->next;
         }
         cout << endl;
@@ -229,7 +230,12 @@ int main() {
 
     DoublyLinkedList list; //create doubly linked list object
     cout << "Store opens:" << endl;
-
+    //take a random name from names & add to list
+    for (int i = 0; i < FIRST_CUSTOMERS; ++i) {
+        string customer = names[rand() % NAME_MAX];
+        list.push_back(customer);
+        cout << "\t" << customer << " joins the line." << endl;
+    }
 
     return 0;
 }
