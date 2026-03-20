@@ -212,6 +212,18 @@ public:
         }
         cout << endl;
     }
+
+    //creating size() method to make random-person-in-line-leaves event easier
+    //same idea as print(), but also counting
+    int size() {
+        int count = 0;
+        Node* current = head;
+         while (current) {
+            count++;
+            current = current->next;
+        }
+        return count;
+    }
 };
 
 int main() {
@@ -242,6 +254,7 @@ int main() {
     //loop for next 19 minutes (20 total)
     for (int i = 0; i < TIME_PERIODS; i++) {
         cout << "Time step #" << i + 2 << ":" << endl;
+
         //customer joins the line (60%)
         int prob1 = rand() % 100 + 1;
         if (prob1 <= 60) {
@@ -263,12 +276,14 @@ int main() {
         }
 
         //customer is served (40%)
-        if () {
+        int prob4 = rand() % 100 + 1;
+        if (prob4 <= 40) {
 
         }
 
         //end customer gets frustrated and leaves the line (20%)
-        if () {
+        int prob5 = rand() % 100 + 1;
+        if (prob4 <= 20) {
 
         }
         cout << "\tResulting line:" << endl;
