@@ -311,6 +311,6 @@ int main() {
         }
         cout << "\tResulting line:" << endl;
         list.print();
-    }
+    } 
     return 0;
 }
