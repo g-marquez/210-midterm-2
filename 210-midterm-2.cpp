@@ -94,6 +94,8 @@ public:
         }
     
         if (pos == 1) {
+            //adding for output
+            cout << head->name << " left the line." << endl;
             pop_front();
             return;
         }
@@ -114,6 +116,8 @@ public:
         }
     
         if (!temp->next) {
+            //adding for output
+            cout << temp->name << " left the line." << endl;
             pop_back();
             return;
         }
@@ -231,6 +235,11 @@ public:
     string front_name() {
         return head->name;
     }
+
+    //creating back_name() to easily get last name in the list
+    string back_name() {
+        return tail->name;
+    }
 };
 
 int main() {
@@ -281,24 +290,27 @@ int main() {
         int prob3 = rand() % 100 + 1;
         if (prob3 <= 10) {
             string customer = names[rand() % NAME_MAX];
-            list.push_back(customer);
+            list.push_front(customer);
             cout << "\t" << customer << " (VIP) joins the line." << endl;
         }
 
         //customer is served (40%)
         int prob4 = rand() % 100 + 1;
         if (prob4 <= 40) {
-            string customer = list->name;
+            string customer = list.front_name();
+            cout << "\t" << customer << " is served." << endl;
+            list.pop_front();
         }
 
         //end customer gets frustrated and leaves the line (20%)
         int prob5 = rand() % 100 + 1;
         if (prob4 <= 20) {
-
+            string customer = list.back_name();
+            cout << "\t" << customer << " exits the rear of the line." << endl;
+            list.pop_back();
         }
         cout << "\tResulting line:" << endl;
         list.print();
     }
-
     return 0;
 }
