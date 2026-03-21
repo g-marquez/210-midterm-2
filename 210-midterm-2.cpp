@@ -226,6 +226,11 @@ public:
         }
         return count;
     }
+
+    //creating front_name() to easily get first name in the list
+    string front_name() {
+        return head->name;
+    }
 };
 
 int main() {
@@ -283,7 +288,7 @@ int main() {
         //customer is served (40%)
         int prob4 = rand() % 100 + 1;
         if (prob4 <= 40) {
-
+            string customer = list->name;
         }
 
         //end customer gets frustrated and leaves the line (20%)
