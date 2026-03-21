@@ -121,6 +121,8 @@ public:
         Node* tempPrev = temp->prev;
         tempPrev->next = temp->next;
         temp->next->prev = tempPrev;
+        //adding for output
+        cout << temp->name << " left the line." << endl;
         delete temp;
     }
 
@@ -266,13 +268,16 @@ int main() {
         //customer leaves the line before being served (10%)
         int prob2 = rand() % 100 + 1;
         if (prob2 <= 10) {
-
+            int position = rand() % list.size();
+            list.delete_pos(position);
         }
 
         //VIP customer joins the front of the line (10%)
         int prob3 = rand() % 100 + 1;
         if (prob3 <= 10) {
-
+            string customer = names[rand() % NAME_MAX];
+            list.push_back(customer);
+            cout << "\t" << customer << " (VIP) joins the line." << endl;
         }
 
         //customer is served (40%)
